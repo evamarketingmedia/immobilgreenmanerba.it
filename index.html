@@ -488,7 +488,7 @@ nav{display:flex;gap:0.2rem}
   grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
   align-items:stretch;
 }
-.about-text{padding:6rem 6vw}
+.about-text{padding:6rem 6vw;background:var(--charcoal)}
 .about-eyebrow{
   font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--sage-light);margin-bottom:2rem;display:block;
 }
@@ -497,7 +497,10 @@ nav{display:flex;gap:0.2rem}
 }
 .about-title em{font-style:italic;color:var(--sage-light);font-weight:300}
 .about-p{
-  font-size:0.85rem;line-height:1.95;color:rgba(255,255,255,0.70);font-weight:300;margin-bottom:1.1rem;
+  font-size:0.88rem;line-height:2.0;color:rgba(255,255,255,0.90);font-weight:300;margin-bottom:1.2rem;
+}
+.about-intro-line{
+  font-size:0.92rem;line-height:2.0;color:rgba(255,255,255,0.95);font-weight:400;margin-bottom:1.2rem;letter-spacing:0.01em;
 }
 .about-p + .about-p{margin-top:0.6rem}
 .certifications{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
@@ -688,9 +691,9 @@ footer{
   .hero-sub{font-size:0.88rem;line-height:1.8}
   .hero-content{padding-top:0;}
   .hero-luxury-badge{font-size:0.5rem;letter-spacing:0.3em;padding:0.35rem 0.9rem;margin-bottom:1rem;}
-  .hero-arrow{width:48px;height:48px;top:50%;bottom:auto;transform:translateY(-50%);z-index:5}
-  .hero-arrow.prev{left:0.5rem}
-  .hero-arrow.next{right:0.5rem}
+  .hero-arrow{width:44px;height:44px;bottom:18vh;top:auto;transform:none;z-index:5}
+  .hero-arrow.prev{left:1rem}
+  .hero-arrow.next{right:1rem}
   .hero-title{font-size:clamp(2.4rem,11vw,3.5rem);}
   .hero-count{left:50%;transform:translateX(-50%);bottom:2rem}
   .apt-hero{min-height:360px;height:55vh}
@@ -805,7 +808,7 @@ Villa in vendita Manerba del Garda. Residenza di lusso lago di Garda. Appartamen
   <div class="about-text reveal">
     <span class="about-eyebrow" data-i18n="about_eyebrow"></span>
     <h2 class="about-title" data-i18n="about_title"></h2>
-    <p class="about-p" data-i18n="about_intro"></p>
+    <p class="about-p about-intro-line" data-i18n="about_intro"></p>
     <p class="about-p" data-i18n="about_p1"></p>
     <p class="about-p" data-i18n="about_p2"></p>
     <p class="about-p" data-i18n="about_p3"></p>
@@ -1027,10 +1030,10 @@ const translations = {
     ],
     about_eyebrow:"Il Progetto — Immobil Green Srl",
     about_title:"Nuova costruzione,<br>qualità senza compromessi",
-    about_intro:"Realizzata da Immobil Green Srl.",
-    about_p1:"Nuova costruzione 2026, certificata in classe energetica A.",
-    about_p2:"Ogni residenza unisce comfort, sicurezza e una forte relazione con il paesaggio. Terrazze con coperture verdi, sistemi di sicurezza integrati e accessi indipendenti per ogni unità definiscono il progetto.",
-    about_p3:"Garage doppio, cantina, ascensore e piscina completano appartamenti pensati per vivere il Garda con eleganza e continuità tra interni ed esterni.",
+    about_intro:"Realizzata da Immobil Green Srl — promotore immobiliare di riferimento sul Lago di Garda.",
+    about_p1:"Nuova costruzione 2026, certificata in classe energetica A. Quattro residenze progettate per chi sceglie il Garda come stile di vita, non solo come destinazione.",
+    about_p2:"Ogni residenza unisce comfort e un rapporto diretto con il paesaggio lacustre. Coperture a verde e accessi completamente indipendenti per ogni unità. Materiali di pregio, finiture curate, architettura contemporanea.",
+    about_p3:"Garage doppio, cantina privata, ascensore e piscina completano un progetto pensato per vivere il Garda con eleganza autentica — dove la continuità tra interni ed esterni non è un dettaglio, ma la vera anima di ogni residenza.",
     cert_privacy:"Privacy",cert_security:"Sicurezza",cert_green:"Green",cert_luxury:"Luxury",
     renderCaptions:["Render vista living","Render zona giorno","Render bagno","Render camera 1","Render camera 2","Render open space"],
     loc_eyebrow:"Posizione Strategica",
@@ -1058,17 +1061,16 @@ const translations = {
       ["Ascensore","Ascensore per l'accesso ai piani."]
     ],
     atticFeatures:[
-      ["Loggia panoramica","Loggia coperta da 42,60 m² con visuale ampia sul paesaggio del Garda."],
-      ["Attico 3-4 con terrazza che circonda tutta l’abitazione e rooftop con piscina","Una composizione aperta che valorizza la vista e il rapporto continuo con l'esterno."],
-      ["Piscina","Rooftop con piscina da 54 m² pensato come estensione della zona living."],
-      ["Garage e ripostigli","Garage e ripostigli per 63,10 m² complessivi."],
-      ["Impianto fotovoltaico","Zona pannelli dedicata da 54,50 m² per un progetto efficiente e contemporaneo."],
-      ["Posto auto esterno","Posto auto esterno coperto da pergola da 14 m²."]
+      ["Loggia panoramica","Affaccio coperto con visuale ampia sul paesaggio del Garda e continuità con gli spazi living."],
+      ["Attico 3-4 con terrazza che circonda tutta l'abitazione e rooftop con piscina","Una composizione aperta che valorizza la vista e il rapporto continuo con l'esterno."],
+      ["Piscina","Rooftop con piscina pensato come naturale estensione della zona living."],
+      ["Garage e ripostigli","Garage doppio privato più posto auto esterno coperto da pergola."],
+      ["Impianto fotovoltaico","Zona pannelli fotovoltaici per un progetto efficiente e contemporaneo."]
     ],
     atticFeatures2:[
       ["Loggia panoramica","Loggia che accompagna il fronte principale dell'abitazione."],
       ["Attico 3-4 con terrazza che circonda tutta l'abitazione e rooftop con piscina","Terrazza continua e piscina per vivere il panorama in ogni momento della giornata."],
-      ["Piscina","Terrazza in copertura con piscina."],
+      ["Piscina","Rooftop con piscina affacciato sul paesaggio del Garda."],
       ["Garage doppio","Garage doppio privato più posto auto esterno coperto da pergola."],
       ["Impianto fotovoltaico","Zona fotovoltaica."]
     ]
@@ -1107,10 +1109,10 @@ const translations = {
     ],
     about_eyebrow:"The Project — Immobil Green Srl",
     about_title:"New construction,<br>quality without compromise",
-    about_intro:"Developed by Immobil Green Srl.",
+    about_intro:"Developed by Immobil Green Srl — a leading real estate developer on Lake Garda.",
     about_p1:"New 2026 construction, certified in energy class A.",
-    about_p2:"Each residence combines comfort, security and a strong connection to the landscape. Green roof terraces, integrated security systems and independent access define the project.",
-    about_p3:"Double garage, cellar, elevator and pool complete homes designed to enjoy Lake Garda with elegance and continuity between interior and exterior spaces.",
+    about_p2:"Each residence combines comfort and a direct connection with the lakeside landscape. Green-covered rooftops and fully independent access for each unit. Premium materials, refined finishes, contemporary architecture.",
+    about_p3:"Double garage, private cellar, elevator and pool complete a project designed to live on Lake Garda with genuine elegance — where the seamless flow between inside and outside is not a detail, but the true soul of each residence.",
     cert_privacy:"Privacy",cert_security:"Security",cert_green:"Green",cert_luxury:"Luxury",
     renderCaptions:["Living view render","Day area render","Bathroom render","Bedroom render 1","Bedroom render 2","Open-space render"],
     loc_eyebrow:"Prime Location",
@@ -1138,20 +1140,18 @@ const translations = {
       ["Elevator","Elevator access and practical circulation between levels."]
     ],
     atticFeatures:[
-      ["Panoramic loggia","42.60 m² covered loggia with wide views over the Garda landscape."],
+      ["Panoramic loggia","Covered terrace with sweeping views over Lake Garda, seamlessly connected to the living spaces."],
       ["Penthouse 3-4 with terrace wrapping the home and rooftop pool","An open composition designed to celebrate the panorama and outdoor living."],
-      ["Pool","54 m² rooftop pool designed as an extension of the living area."],
-      ["Garage and storage","Garage and storage areas totalling 63.10 m²."],
-      ["Photovoltaic system","54.50 m² area dedicated to solar panels for an efficient contemporary project."],
-      ["Outdoor parking","14 m² covered outdoor pergola parking space."]
+      ["Pool","Rooftop pool conceived as a natural extension of the living area."],
+      ["Garage and storage","Private double garage plus covered outdoor pergola parking."],
+      ["Photovoltaic system","Dedicated solar panel area for an efficient and contemporary project."]
     ],
     atticFeatures2:[
       ["Panoramic loggia","49.30 m² loggia extending along the main frontage of the home."],
       ["Penthouse 3-4 with terrace wrapping the home and rooftop pool","A continuous terrace and rooftop pool designed to enjoy the view throughout the day."],
-      ["Pool","71 m² rooftop terrace with pool and open views over the landscape."],
-      ["Garage and cellar","39.18 m² garage and 24.70 m² private cellar."],
-      ["Photovoltaic system","39 m² dedicated photovoltaic area."],
-      ["Outdoor parking","14 m² covered outdoor pergola parking space."]
+      ["Pool","Rooftop pool opening onto sweeping views over the Garda landscape."],
+      ["Garage and cellar","Private double garage plus covered outdoor pergola parking."],
+      ["Photovoltaic system","Dedicated photovoltaic area."]
     ]
   },
   fr:{
@@ -1188,10 +1188,10 @@ const translations = {
     ],
     about_eyebrow:"Le Projet — Immobil Green Srl",
     about_title:"Nouvelle construction,<br>qualité sans compromis",
-    about_intro:"Réalisée par Immobil Green Srl.",
-    about_p1:"Nouvelle construction 2026, certifiée en classe énergétique A.",
-    about_p2:"Chaque résidence associe confort, sécurité et lien fort avec le paysage. Terrasses avec couvertures vertes, systèmes de sécurité intégrés et accès indépendants définissent le projet.",
-    about_p3:"Double garage, cave, ascenseur et piscine complètent des résidences pensées pour vivre le lac de Garde avec élégance.",
+    about_intro:"Réalisée par Immobil Green Srl — promoteur immobilier de référence sur le Lac de Garde.",
+    about_p1:"Nouvelle construction 2026, certifiée en classe énergétique A. Quatre résidences conçues pour ceux qui choisissent le Lac de Garde comme art de vivre, et non comme simple destination.",
+    about_p2:"Chaque résidence associe confort et lien direct avec le paysage lacustre. Toitures végétalisées et accès entièrement indépendants pour chaque unité. Matériaux haut de gamme, finitions soignées, architecture contemporaine.",
+    about_p3:"Double garage, cave privée, ascenseur et piscine complètent un projet pensé pour vivre le Lac de Garde avec une élégance authentique — où la continuité entre intérieur et extérieur n'est pas un détail, mais l'âme profonde de chaque résidence.",
     cert_privacy:"Intimité",cert_security:"Sécurité",cert_green:"Green",cert_luxury:"Luxury",
     renderCaptions:["Render vue séjour","Render espace jour","Render salle de bain","Render chambre 1","Render chambre 2","Render open space"],
     loc_eyebrow:"Emplacement stratégique",
@@ -1219,20 +1219,18 @@ const translations = {
       ["Ascenseur","Ascenseur et circulation pratique entre les niveaux."]
     ],
     atticFeatures:[
-      ["Loggia panoramique","Loggia couverte de 42,60 m² avec vue large sur le paysage du Garda."],
+      ["Loggia panoramique","Terrasse couverte avec vue panoramique sur le Lac de Garde, en continuité avec les espaces de vie."],
       ["Attique 3-4 avec terrasse autour de l'habitation et rooftop avec piscine","Une composition ouverte pensée pour valoriser le panorama et la vie extérieure."],
-      ["Piscine","Rooftop de 54 m² avec piscine pensé comme prolongement du living."],
-      ["Garage et rangements","Garage et rangements pour un total de 63,10 m²."],
-      ["Photovoltaïque","Zone dédiée aux panneaux de 54,50 m² pour un projet efficace et contemporain."],
-      ["Parking extérieur","Place extérieure sous pergola de 14 m²."]
+      ["Piscine","Piscine en rooftop conçue comme prolongement naturel de l'espace de vie."],
+      ["Garage et rangements","Double garage privé plus place extérieure couverte sous pergola."],
+      ["Photovoltaïque","Zone dédiée aux panneaux solaires pour un projet efficace et contemporain."]
     ],
     atticFeatures2:[
       ["Loggia panoramique","Loggia de 49,30 m² sur toute la façade principale."],
       ["Attique 3-4 avec terrasse autour de l'habitation et rooftop avec piscine","Terrasse continue et piscine en toiture pour profiter du panorama à tout moment."],
-      ["Piscine","Terrasse en couverture avec piscine de 71 m²."],
-      ["Garage et cave","Garage de 39,18 m² et cave privée de 24,70 m²."],
-      ["Photovoltaïque","Zone photovoltaïque dédiée de 39 m²."],
-      ["Parking extérieur","Place extérieure sous pergola de 14 m²."]
+      ["Piscine","Piscine en rooftop avec vue ouverte sur le paysage du Lac de Garde."],
+      ["Garage et cave","Double garage privé plus place extérieure couverte sous pergola."],
+      ["Photovoltaïque","Zone photovoltaïque dédiée."]
     ]
   },
   de:{
@@ -1269,10 +1267,10 @@ const translations = {
     ],
     about_eyebrow:"Das Projekt — Immobil Green Srl",
     about_title:"Neubau,<br>Qualität ohne Kompromisse",
-    about_intro:"Realisiert von Immobil Green Srl.",
-    about_p1:"Neubau 2026, zertifiziert in Energieklasse A.",
-    about_p2:"Jede Residenz verbindet Komfort, Sicherheit und eine starke Beziehung zur Landschaft. Gruene Terrassen, integrierte Sicherheitssysteme und unabhaengige Zugaenge praegen das Projekt.",
-    about_p3:"Doppelgarage, Keller, Aufzug und Pool vervollstaendigen Wohnungen, die fuer elegantes Wohnen am Gardasee konzipiert wurden.",
+    about_intro:"Realisiert von Immobil Green Srl — führender Immobilienentwickler am Gardasee.",
+    about_p1:"Neubau 2026, zertifiziert in Energieklasse A. Vier Residenzen für Menschen, die den Gardasee als Lebensstil wählen — nicht nur als Reiseziel.",
+    about_p2:"Jede Residenz verbindet Komfort und eine direkte Verbindung mit der Seelandschaft. Begrünte Dachflächen und vollständig unabhängige Zugänge für jede Einheit. Hochwertige Materialien, sorgfältige Ausführung, zeitgenössische Architektur.",
+    about_p3:"Doppelgarage, privater Keller, Aufzug und Pool vervollständigen ein Projekt, das darauf ausgelegt ist, den Gardasee mit echter Eleganz zu genießen — wo der Übergang zwischen Innen und Außen nicht ein Detail ist, sondern die eigentliche Seele jeder Residenz.",
     cert_privacy:"Privatsphäre",cert_security:"Sicherheit",cert_green:"Green",cert_luxury:"Luxury",
     renderCaptions:["Wohnblick-Render","Tagesbereich-Render","Bad-Render","Schlafzimmer-Render 1","Schlafzimmer-Render 2","Open-Space-Render"],
     loc_eyebrow:"Strategische Lage",
@@ -1300,20 +1298,18 @@ const translations = {
       ["Aufzug","Aufzug und funktionale Wege zwischen den Ebenen."]
     ],
     atticFeatures:[
-      ["Panorama-Loggia","Überdachte Loggia mit 42,60 m² und weitem Blick auf die Garda-Landschaft."],
+      ["Panorama-Loggia","Überdachte Terrasse mit weitem Blick auf den Gardasee, fließend mit den Wohnräumen verbunden."],
       ["Penthouse 3-4 mit umlaufender Terrasse und Rooftop-Pool","Offene Komposition für Panorama, Licht und entspanntes Wohnen im Freien."],
-      ["Pool","54 m² Rooftop-Pool als Erweiterung des Wohnbereichs."],
-      ["Garage und Abstellräume","Garage und Abstellräume mit insgesamt 63,10 m²."],
-      ["Photovoltaik","54,50 m² für Solarmodule in einem effizienten und zeitgenössischen Projekt."],
-      ["Aussenstellplatz","Aussenstellplatz unter Pergola mit 14 m²."]
+      ["Pool","Rooftop-Pool als natürliche Erweiterung des Wohnbereichs."],
+      ["Garage und Abstellräume","Private Doppelgarage plus überdachter Außenstellplatz unter Pergola."],
+      ["Photovoltaik","Dedizierter Solarmodulbereich für ein effizientes und zeitgenössisches Projekt."]
     ],
     atticFeatures2:[
       ["Panorama-Loggia","49,30 m² große Loggia entlang der Hauptfassade der Wohnung."],
       ["Penthouse 3-4 mit umlaufender Terrasse und Rooftop-Pool","Durchgehende Terrasse und Dachpool für Panorama und Licht zu jeder Tageszeit."],
-      ["Pool","Dachterrasse mit 71 m² Poolflaeche und offenem Blick in die Landschaft."],
-      ["Garage und Keller","Garage mit 39,18 m² und privater Keller mit 24,70 m²."],
-      ["Photovoltaik","Eigener Photovoltaikbereich mit 39 m²."],
-      ["Aussenstellplatz","Aussenstellplatz unter Pergola mit 14 m²."]
+      ["Pool","Rooftop-Pool mit offenem Blick auf die Garda-Landschaft."],
+      ["Garage und Keller","Private Doppelgarage plus überdachter Außenstellplatz unter Pergola."],
+      ["Photovoltaik","Dedizierter Photovoltaikbereich."]
     ]
   }
 };
