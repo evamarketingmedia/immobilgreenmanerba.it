@@ -298,7 +298,7 @@ nav{display:flex;gap:0.2rem}
   contain:layout paint;
 }
 .hero-slide{
-  position:absolute;inset:0;opacity:0;transition:opacity 0.4s ease;
+  position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease;
   will-change:opacity;
 }
 .hero-slide.active{opacity:1}
@@ -1352,16 +1352,19 @@ function scrollToSection(sel){
 function renderHero(){
   const holder = document.getElementById("heroSlides");
   holder.innerHTML = heroImages.map((img, idx) => `
-    <div class="hero-slide ${idx === currentHero ? "active" : ""}">
-      <img class="hero-img" src="${img.src}" alt="${img.alt}" ${idx===0?"loading='eager' fetchpriority='high'":"loading='lazy'"} decoding="async">
+    <div class="hero-slide ${idx === currentHero ? "active" : ""}" data-idx="${idx}">
+      <img class="hero-img" src="${img.src}" alt="${img.alt}" loading="eager" fetchpriority="${idx===0?'high':'low'}" decoding="async">
     </div>
   `).join("");
   document.getElementById("heroCount").textContent = `${String(currentHero + 1).padStart(2,"0")} / ${String(heroImages.length).padStart(2,"0")}`;
 }
 
 function changeHero(step){
+  const slides = document.querySelectorAll(".hero-slide");
+  slides[currentHero].classList.remove("active");
   currentHero = (currentHero + step + heroImages.length) % heroImages.length;
-  renderHero();
+  slides[currentHero].classList.add("active");
+  document.getElementById("heroCount").textContent = `${String(currentHero + 1).padStart(2,"0")} / ${String(heroImages.length).padStart(2,"0")}`;
 }
 
 function renderAptTabs(){
