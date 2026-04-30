@@ -934,8 +934,8 @@ const apartments = [
     specs:[
       ["s_comm","237,05 m²","highlight"],
       ["s_soggiorno","32,20 m²",""],
-      ["s_camere","2 matrimoniali",""],
-      ["s_bagni","2 + ripostiglio",""],
+      ["s_camere","v_camere",""],
+      ["s_bagni","v_bagni_ripostiglio",""],
       ["s_garage","38,50 m²","highlight"],
       ["s_cantina","23,40 m²","highlight"],
       ["s_portico","38,50 m²",""],
@@ -955,8 +955,8 @@ const apartments = [
     specs:[
       ["s_comm","238,90 m²","highlight"],
       ["s_soggiorno","32,20 m²",""],
-      ["s_camere","2 matrimoniali",""],
-      ["s_bagni","2 + ripostiglio",""],
+      ["s_camere","v_camere",""],
+      ["s_bagni","v_bagni_ripostiglio",""],
       ["s_garage","53,20 m²","highlight"],
       ["s_cantina","9,90 m²","highlight"],
       ["s_tech","10,40 m²",""],
@@ -977,7 +977,7 @@ const apartments = [
     specs:[
       ["s_comm","200,98 m²","highlight"],
       ["s_soggiorno","32,20 m²",""],
-      ["s_camere","2 matrimoniali",""],
+      ["s_camere","v_camere",""],
       ["s_bagni","2",""],
       ["s_garage_storage","63,10 m²","highlight"],
       ["s_loggia","42,60 m²","highlight"],
@@ -998,7 +998,7 @@ const apartments = [
     specs:[
       ["s_comm","211,50 m²","highlight"],
       ["s_soggiorno","32,20 m²",""],
-      ["s_camere","2 matrimoniali",""],
+      ["s_camere","v_camere",""],
       ["s_bagni","2",""],
       ["s_garage","39,18 m²","highlight"],
       ["s_cantina","24,70 m²","highlight"],
@@ -1036,6 +1036,7 @@ const translations = {
     s_garage:"Garage",s_cantina:"Cantina",s_portico:"Portico",s_giardino:"Giardino",s_piscina:"Area Piscina",s_giardino_piscina:"Giardino + Area Piscina",
     s_posto:"Posto Auto Pergola",s_tech:"Locale Tecnico Piscina",s_loggia:"Loggia Panoramica",s_terrazza:"Terrazza + Piscina",
     s_garage_storage:"Garage e Ripostigli",s_solar_zone:"Zona Pannelli Fotovoltaici",
+    v_camere:"2 matrimoniali",v_bagni_ripostiglio:"2 + ripostiglio",
     plan_eyebrow:"Planimetria",
     plan_title:"Distribuzione degli <em>Spazi</em>",
     plan_intro:"Il complesso residenziale si sviluppa su tre livelli: piano interrato con garage e cantine, piano terra con Residenza 01 e 02 con giardino e piscina privati, piano primo con Residenza 03 e 04 con loggia panoramica, terrazza che circonda tutta l'abitazione e piscina privata al piano. Ascensore per l'accesso ai piani.",
@@ -1098,7 +1099,7 @@ const translations = {
     hero_title_top:"Residences",hero_title_bottom:"on Lake Garda",
     hero_sub:"Four newly built luxury residences with lake views and surrounding mountains. Contemporary architecture, outdoor living and independent access for each home.",
     hero_pills:["Pool","Double garage","Cellar","Lake view"],
-    stat1:"4 Résidences",stat2:"Average commercial area",stat3:"Energy Class",stat4:"New Construction",
+    stat1:"4 Residences",stat2:"Average commercial area",stat3:"Energy Class",stat4:"New Construction",
     apts_eyebrow:"The Residences",apts_title:"Four apartments,<br><em>one address</em>",
     tab1:"Residence 01 — Ground Floor",tab2:"Residence 02 — Ground Floor",tab3:"Residence 03 — First Floor",tab4:"Residence 04 — First Floor",
     floor_pt:"Ground Floor",floor_p1:"First Floor",
@@ -1113,9 +1114,9 @@ const translations = {
     surf_disclaimer:"Immobil Green Srl reserves the right to make constructive and improvement changes at any time. Therefore everything seen or read is close to reality but not final.",
     s_comm:"Commercial Area",s_soggiorno:"Living Room",s_camere:"Bedrooms",s_bagni:"Bathrooms",
     s_garage:"Garage",s_cantina:"Cellar",s_portico:"Porch",s_giardino:"Garden",s_piscina:"Pool Area",s_giardino_piscina:"Garden + Pool Area",
-    s_posto:"Pergola Parking",s_tech:"Pool Technical Room",s_loggia:"Panoramic Loggia",s_terrazza:"Terrace + Pool",
-    s_garage_storage:"Garage & Storage",s_solar_zone:"Solar Panel Area",
-    plan_eyebrow:"Plans",
+    s_posto:"Covered Carport",s_tech:"Pool Equipment Room",s_loggia:"Panoramic Loggia",s_terrazza:"Terrace + Pool",
+    s_garage_storage:"Garage & Storage Rooms",s_solar_zone:"Solar Panel Area",
+    v_camere:"2 double bedrooms",v_bagni_ripostiglio:"2 + storage room",
     plan_title:"Space <em>Distribution</em>",
     plan_intro:"The residential complex is arranged across three levels: basement with garages and cellars, ground floor with Residences 01 and 02 with private garden and pool, and first floor with Residences 03 and 04 featuring panoramic loggia, a wraparound terrace and a private pool. Elevator access connects all levels.",
     planCards:[
@@ -1126,7 +1127,7 @@ const translations = {
     about_eyebrow:"The Project — Immobil Green Srl",
     about_title:"New construction,<br>quality without compromise",
     about_intro:"Developed by Immobil Green Srl — a leading real estate developer on Lake Garda.",
-    about_p1:"New 2026 construction, certified in energy class A.",
+    about_p1:"New 2026 construction, certified in energy class A. Four residences designed for those who choose Lake Garda as a way of life, not merely as a destination.",
     about_p2:"Each residence combines comfort and a direct connection with the lakeside landscape. Green-covered rooftops and fully independent access for each unit. Premium materials, refined finishes, contemporary architecture.",
     about_p3:"Double garage, private cellar, elevator and pool complete a project designed to live on Lake Garda with genuine elegance — where the seamless flow between inside and outside is not a detail, but the true soul of each residence.",
     cert_privacy:"Privacy",cert_security:"Security",cert_green:"Green",cert_luxury:"Luxury",
@@ -1143,31 +1144,31 @@ const translations = {
     trust1:"Pool",trust2:"Garage and cellar",trust3:"Green",trust4:"Class A",trust5:"Elevator",
     groundFeatures:[
       ["Residences 01 and 02 with private garden and pool","Generous outdoor areas with covered porch and seamless continuity between the home and outdoor living."],
-      ["Pool","Pool with dedicated technical room and a refined relaxation area."],
-      ["Double garage","Private double garage plus covered outdoor pergola parking."],
-      ["Cellar, technical room","Cellar and technical room serving the residence throughout the year."],
-      ["Elevator","Elevator access integrated into the project."]
+      ["Pool","Pool with dedicated equipment room and an outdoor area designed for relaxation."],
+      ["Double garage","Private double garage plus a covered outdoor parking space."],
+      ["Cellar & service room","Cellar and service room."],
+      ["Lift","Lift access to the upper floors."]
     ],
     groundFeatures2:[
       ["Residences 01 and 02 with private garden and pool","Garden and covered porch enhance a bright and comfortable layout."],
-      ["Pool","Pool with dedicated technical room and open green outlook."],
-      ["Double garage","Private double garage plus covered outdoor pergola parking."],
-      ["Cellar, technical room","Well-organised cellar and pool technical room."],
-      ["Elevator","Elevator access and practical circulation between levels."]
+      ["Pool","Pool with dedicated equipment room."],
+      ["Double garage","Private double garage plus a covered outdoor parking space."],
+      ["Cellar & service room","Well-organised cellar and pool service room, thoughtfully separated."],
+      ["Lift","Lift access to the upper floors."]
     ],
     atticFeatures:[
-      ["Panoramic terrace","Spacious terrace with open views over Lake Garda, flowing seamlessly from the living area."],
-      ["Pool","Private pool with lake view."],
-      ["Garage and parking","Private double garage with covered outdoor parking under a pergola."],
-      ["Elevator","Internal elevator with direct access to the floor."],
-      ["Energy efficiency","Photovoltaic system for a sustainable and efficient home."]
+      ["Panoramic terrace","Terrace with open views over Lake Garda, flowing seamlessly from the living area."],
+      ["Pool","Penthouse with pool and lake view."],
+      ["Garage and parking","Private double garage with a covered outdoor parking space."],
+      ["Lift","Internal lift with direct access to the floor."],
+      ["Energy efficiency","Photovoltaic system for a sustainable and energy-efficient home."]
     ],
     atticFeatures2:[
       ["Panoramic terrace","Large terrace with Lake Garda views, designed to offer light, openness and continuity between indoor and outdoor spaces."],
-      ["Pool","Private pool with lake view."],
-      ["Garage and parking","Spacious double garage plus covered outdoor parking under a pergola."],
-      ["Elevator","Elevator for direct access to the floor."],
-      ["Photovoltaic system","Integrated photovoltaic system to improve energy efficiency and sustainability."]
+      ["Pool","Penthouse with pool and lake view."],
+      ["Garage and parking","Spacious double garage plus a covered outdoor parking space."],
+      ["Lift","Lift for direct access to the floor."],
+      ["Photovoltaic system","Integrated photovoltaic system to improve energy efficiency and the sustainability of the home."]
     ]
   },
   fr:{
@@ -1192,9 +1193,9 @@ const translations = {
     surf_disclaimer:"Immobil Green Srl se réserve le droit d'apporter des modifications constructives et d'amélioration à tout moment. Par conséquent, tout ce qui est vu ou lu est proche de la réalité mais non définitif.",
     s_comm:"Surface commerciale",s_soggiorno:"Séjour",s_camere:"Chambres",s_bagni:"Salles de bain",s_giardino_piscina:"Jardin + piscine",
     s_garage:"Garage",s_cantina:"Cave",s_portico:"Porche",s_giardino:"Jardin",s_piscina:"Espace piscine",
-    s_posto:"Parking pergola",s_tech:"Local technique piscine",s_loggia:"Loggia panoramique",s_terrazza:"Terrasse + piscine",
-    s_garage_storage:"Garage et rangements",s_solar_zone:"Zone panneaux photovoltaïques",
-    plan_eyebrow:"Plans",
+    s_posto:"Place sous auvent",s_tech:"Local technique piscine",s_loggia:"Loggia panoramique",s_terrazza:"Terrasse + piscine",
+    s_garage_storage:"Garage et locaux de rangement",s_solar_zone:"Zone panneaux photovoltaïques",
+    v_camere:"2 chambres doubles",v_bagni_ripostiglio:"2 + débarras",
     plan_title:"Distribution des <em>espaces</em>",
     plan_intro:"Le complexe résidentiel se développe sur trois niveaux : sous-sol avec garages et caves, rez-de-chaussée avec Résidences 01 et 02 avec jardin et piscine privés, premier étage avec Résidences 03 et 04 avec loggia panoramique, terrasse périphérique et piscine privée. Ascenseur pour l'accès aux niveaux.",
     planCards:[
@@ -1222,35 +1223,35 @@ const translations = {
     trust1:"Piscine",trust2:"Garage et cave",trust3:"Green",trust4:"Classe A",trust5:"Ascenseur",
     groundFeatures:[
       ["Résidences 01 et 02 avec jardin et piscine privés","Espaces extérieurs amples avec porche couvert et belle continuité entre intérieur et extérieur."],
-      ["Piscine","Piscine avec local technique dédié et espace de détente raffiné."],
-      ["Double garage","Double garage privé plus place extérieure couverte sous pergola."],
-      ["Cave, local technique","Cave et local technique au service de la résidence toute l'année."],
-      ["Ascenseur","Ascenseur intégré au projet pour l'accès aux niveaux."]
+      ["Piscine","Piscine avec local technique dédié et espace extérieur conçu pour la détente."],
+      ["Double garage","Double garage privé plus une place extérieure couverte sous auvent."],
+      ["Cave & local de service","Cave et local de service."],
+      ["Ascenseur","Ascenseur pour l'accès aux étages."]
     ],
     groundFeatures2:[
       ["Résidences 01 et 02 avec jardin et piscine privés","Jardin et porche couvert valorisent une distribution lumineuse et confortable."],
-      ["Piscine","Piscine avec local technique dédié et vue ouverte sur le vert."],
-      ["Double garage","Double garage privé plus place extérieure couverte sous pergola."],
-      ["Cave, local technique","Cave et local technique piscine bien organisés et séparés."],
-      ["Ascenseur","Ascenseur et circulation pratique entre les niveaux."]
+      ["Piscine","Piscine avec local technique dédié."],
+      ["Double garage","Double garage privé plus une place extérieure couverte sous auvent."],
+      ["Cave & local de service","Cave et local technique piscine bien organisés et séparés."],
+      ["Ascenseur","Ascenseur pour l'accès aux étages."]
     ],
     atticFeatures:[
-      ["Terrasse panoramique","Grande terrasse avec vue ouverte sur le Lac de Garde, en continuité avec la zone de vie."],
-      ["Piscine","Piscine privée avec vue sur le lac."],
-      ["Garage et stationnement","Double garage privé avec place extérieure couverte sous pergola."],
+      ["Terrasse panoramique","Terrasse avec vue ouverte sur le Lac de Garde, en continuité avec la zone de vie."],
+      ["Piscine","Appartement en attique avec piscine vue lac."],
+      ["Garage et stationnement","Double garage privé avec une place extérieure couverte sous auvent."],
       ["Ascenseur","Ascenseur intérieur avec accès direct à l'étage."],
-      ["Efficacité énergétique","Installation photovoltaïque pour un logement durable et efficace."]
+      ["Efficacité énergétique","Installation photovoltaïque pour un logement durable et performant."]
     ],
     atticFeatures2:[
       ["Terrasse panoramique","Grande terrasse avec vue sur le Lac de Garde, conçue pour offrir lumière, ouverture et continuité entre les espaces intérieurs et extérieurs."],
-      ["Piscine","Piscine privée avec vue sur le lac."],
-      ["Garage et stationnement","Grand double garage plus place extérieure couverte sous pergola."],
+      ["Piscine","Appartement en attique avec piscine vue lac."],
+      ["Garage et stationnement","Vaste double garage plus une place extérieure couverte sous auvent."],
       ["Ascenseur","Ascenseur pour l'accès direct à l'étage."],
-      ["Installation photovoltaïque","Installation photovoltaïque intégrée pour améliorer l'efficacité énergétique et la durabilité."]
+      ["Installation photovoltaïque","Installation photovoltaïque intégrée pour améliorer l'efficacité énergétique et la durabilité du logement."]
     ]
   },
   de:{
-    nav_apts:"Wohnungen",nav_project:"Das Projekt",nav_location:"Lage",nav_contact:"Kontakt",nav_cta:"Kontakt",
+    nav_apts:"Wohnungen",nav_project:"Das Projekt",nav_location:"Lage",nav_contact:"Kontakt",nav_cta:"Kontaktieren Sie uns",
     badge_class:"Energieklasse",
     hero_eyebrow:"Manerba del Garda · Brescia · Neubau 2026",
     hero_title_top:"Residenzen",hero_title_bottom:"am Garda",
@@ -1271,9 +1272,9 @@ const translations = {
     surf_disclaimer:"Immobil Green Srl behält sich das Recht vor, jederzeit konstruktive und verbessernde Änderungen vorzunehmen. Daher entspricht alles Gesehene oder Gelesene annähernd der Realität, ist aber nicht endgültig.",
     s_comm:"Handelsfläche",s_soggiorno:"Wohnbereich",s_camere:"Schlafzimmer",s_bagni:"Bäder",s_giardino_piscina:"Garten + Poolbereich",
     s_garage:"Garage",s_cantina:"Keller",s_portico:"Portikus",s_giardino:"Garten",s_piscina:"Poolbereich",
-    s_posto:"Pergola-Stellplatz",s_tech:"Pool-Technikraum",s_loggia:"Panorama-Loggia",s_terrazza:"Terrasse + Pool",
+    s_posto:"Überdachter Stellplatz",s_tech:"Pool-Technikraum",s_loggia:"Panorama-Loggia",s_terrazza:"Terrasse + Pool",
     s_garage_storage:"Garage und Abstellräume",s_solar_zone:"Bereich Solarmodule",
-    plan_eyebrow:"Grundriss",
+    v_camere:"2 Doppelschlafzimmer",v_bagni_ripostiglio:"2 + Abstellraum",
     plan_title:"Verteilung der <em>Räume</em>",
     plan_intro:"Die Wohnanlage erstreckt sich über drei Ebenen: Untergeschoss mit Garagen und Kellern, Erdgeschoss mit Residenz 01 und 02 mit privatem Garten und Pool sowie erstes Obergeschoss mit Residenz 03 und 04 mit Panorama-Loggia, umlaufender Terrasse und privatem Pool. Ein Aufzug verbindet die Ebenen.",
     planCards:[
@@ -1301,31 +1302,31 @@ const translations = {
     trust1:"Pool",trust2:"Garage und Keller",trust3:"Green",trust4:"Klasse A",trust5:"Aufzug",
     groundFeatures:[
       ["Residenzen 01 und 02 mit privatem Garten und Pool","Großzügige Außenbereiche mit überdachtem Portikus und harmonischem Übergang zwischen Innen und Außen."],
-      ["Pool","Pool mit eigenem Technikraum und elegantem Relaxbereich."],
-      ["Doppelgarage","Private Doppelgarage plus überdachter Außenstellplatz unter Pergola."],
-      ["Keller, Technikraum","Keller und Technikraum als praktische Ergänzung der Residenz."],
-      ["Aufzug","Aufzug als integrierter Zugang zu den Ebenen."]
+      ["Pool","Pool mit eigenem Technikraum und Außenbereich für Entspannung."],
+      ["Doppelgarage","Private Doppelgarage plus ein überdachter Außenstellplatz."],
+      ["Keller & Technikraum","Keller und Technikraum."],
+      ["Aufzug","Aufzug für den Zugang zu den Etagen."]
     ],
     groundFeatures2:[
       ["Residenzen 01 und 02 mit privatem Garten und Pool","Garten und überdachter Portikus unterstreichen einen hellen und komfortablen Grundriss."],
-      ["Pool","Pool mit eigenem Technikraum und offenem Grünblick."],
-      ["Doppelgarage","Private Doppelgarage plus überdachter Außenstellplatz unter Pergola."],
-      ["Keller, Technikraum","Gut organisierter Keller und separater Pool-Technikraum."],
-      ["Aufzug","Aufzug und funktionale Wege zwischen den Ebenen."]
+      ["Pool","Pool mit eigenem Technikraum."],
+      ["Doppelgarage","Private Doppelgarage plus ein überdachter Außenstellplatz."],
+      ["Keller & Technikraum","Sorgfältig angelegter Keller und separater Pool-Technikraum."],
+      ["Aufzug","Aufzug für den Zugang zu den Etagen."]
     ],
     atticFeatures:[
-      ["Panorama-Terrasse","Große Terrasse mit weitem Seeblick, fließend mit den Wohnräumen verbunden."],
-      ["Pool","Privater Pool mit Seeblick."],
-      ["Garage und Stellplatz","Private Doppelgarage mit überdachtem Außenstellplatz unter Pergola."],
+      ["Panorama-Terrasse","Terrasse mit weitem Seeblick, fließend mit den Wohnräumen verbunden."],
+      ["Pool","Penthouse mit Pool und Seeblick."],
+      ["Garage und Stellplatz","Private Doppelgarage mit einem überdachten Außenstellplatz."],
       ["Aufzug","Hausinterner Aufzug mit direktem Zugang zur Etage."],
-      ["Energieeffizienz","Photovoltaikanlage für ein nachhaltiges und effizientes Zuhause."]
+      ["Energieeffizienz","Photovoltaikanlage für ein nachhaltiges und energieeffizientes Zuhause."]
     ],
     atticFeatures2:[
-      ["Panorama-Terrasse","Große Terrasse mit Gardaseeblick, für Licht, Offenheit und Kontinuität zwischen Innen und Außen konzipiert."],
-      ["Pool","Privater Pool mit Seeblick."],
-      ["Garage und Stellplatz","Geräumige Doppelgarage plus überdachter Außenstellplatz unter Pergola."],
+      ["Panorama-Terrasse","Große Terrasse mit Gardaseeblick, konzipiert für Licht, Offenheit und Kontinuität zwischen Innen- und Außenbereich."],
+      ["Pool","Penthouse mit Pool und Seeblick."],
+      ["Garage und Stellplatz","Geräumige Doppelgarage plus ein überdachter Außenstellplatz."],
       ["Aufzug","Aufzug für den direkten Zugang zur Etage."],
-      ["Photovoltaikanlage","Integrierte Photovoltaikanlage zur Verbesserung von Energieeffizienz und Nachhaltigkeit."]
+      ["Photovoltaikanlage","Integrierte Photovoltaikanlage zur Verbesserung von Energieeffizienz und Nachhaltigkeit der Wohnung."]
     ]
   }
 };
@@ -1391,7 +1392,7 @@ function renderAptPanels(){
       <div class="apt-detail">
         <div class="apt-specs-col">
           <div class="apt-specs-title">${t.specs_title}</div>
-          ${apt.specs.map(([key,val,cls],i) => `<div class="spec-row"><span class="spec-k">${t[key]||key}</span><span class="spec-v ${i===0?'highlight':''}">${val}</span></div>`).join("")}
+          ${apt.specs.map(([key,val,cls],i) => `<div class="spec-row"><span class="spec-k">${t[key]||key}</span><span class="spec-v ${i===0?'highlight':''}">${t[val]||val}</span></div>`).join("")}
           <div class="apt-surface-block">
             <div class="surf-row"><span class="surf-label">${t.surf_calp_label||'Superficie calpestabile interno + esterno'}</span><span class="surf-val">${apt.surfCalp||''}</span></div>
             <div class="surf-disclaimer">${t.surf_disclaimer||''}</div>
